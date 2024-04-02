@@ -7,7 +7,7 @@ RUN apt-get update \
   libzip-dev \
   unzip \
   && docker-php-ext-install zip pdo pdo_mysql \
-  && pecl install -o -f redis-5.1.1 \
+  && pecl install -o -f redis-7.2.4 \
   && docker-php-ext-enable redis
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer

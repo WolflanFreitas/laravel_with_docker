@@ -14,7 +14,7 @@ mkdir example-dir && cd example-dir
 docker run -u ${UID}:${UID} --rm -v $(pwd):/app composer create-project --prefer-dist laravel/laravel .
 ```
 
-3 - Copiar os arquivos docker-compose.yml, Dockerfile e a pasta .docker para o diretório do projeto
+3 - Copiar os arquivos docker-compose.yml, Dockerfile e a pasta .docker para dentro do diretório do projeto
 
 4 - Rodar o comando para criar o container
 

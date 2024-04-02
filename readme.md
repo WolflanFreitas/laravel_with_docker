@@ -27,3 +27,83 @@ docker compose up -d
 ```bash
 docker compose exec php bash
 ```
+
+6 - Rodar o comando para instalar as dependências do Laravel
+
+```bash
+composer install
+```
+
+7 - Rodar o comando para criar a chave do Laravel
+
+```bash
+php artisan key:generate
+```
+
+8 - Acessar o projeto no navegador
+
+```
+http://localhost:8080
+```
+
+## Comandos úteis
+
+- Rodar o container
+
+```bash
+docker compose up -d
+```
+
+- Acessar o container
+
+```bash
+docker compose exec php bash
+```
+
+- Parar o container
+
+```bash
+docker compose down
+```
+
+- Ver os containers rodando
+
+```bash
+docker ps
+```
+
+- Ver os containers parados
+
+```bash
+docker ps -a
+```
+
+- Ver os volumes
+
+```bash
+docker volume ls
+```
+
+- Ver as imagens
+
+```bash
+docker images
+```
+
+- Ver os logs do container
+
+```bash
+docker compose logs -f
+```
+
+- Ver os logs do container de forma específica
+
+```bash
+docker compose logs -f php
+```
+
+- Executar npm install
+
+```bash
+docker compose run --rm node npm install
+```

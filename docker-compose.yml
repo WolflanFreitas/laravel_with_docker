@@ -29,5 +29,12 @@ services:
       - dbdata:/var/lib/mysql
     ports:
       - "3307:3306"
+  node:
+    image: node:alpine
+    user: node
+    working_dir: /assets
+    volumes:
+      - ./:/assets
+    command: npm run watch
 volumes:
   dbdata:

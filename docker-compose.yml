@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   web:
     image: nginx:alpine
     working_dir: /var/www/html
@@ -26,7 +28,7 @@ services:
       MYSQL_PASSWORD: '${DB_PASSWORD:-secret}'
       MYSQL_ROOT_HOST: '%'
     volumes:
-      - dbdata:/var/lib/mysql
+      - mysqldata:/var/lib/mysql
     ports:
       - "3307:3306"
   node:

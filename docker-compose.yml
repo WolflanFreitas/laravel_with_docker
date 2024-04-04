@@ -17,7 +17,7 @@ services:
       - "8081:80"
     depends_on:
       - php
-  db:
+  mysql:
     image: mysql:8
     environment:
       MYSQL_DATABASE: '${DB_DATABASE}'
@@ -36,5 +36,10 @@ services:
     volumes:
       - ./:/assets
     command: npm run watch
+  redis:
+    image: redis:alpine
+    volumes:
+      - redisdata:/data
 volumes:
-  dbdata:
+  mysqldata:
+  redisdata:

@@ -14,6 +14,12 @@ mkdir example-dir && cd example-dir
 docker run -u ${UID}:${UID} --rm -v $(pwd):/app composer create-project --prefer-dist laravel/laravel .
 ```
 
+Alternativo - Poderá também criar o projeto sem informar a pasta antes
+
+```bash
+docker run -u ${UID}:${UID} --rm -v $(pwd):/app composer create-project --prefer-dist laravel/laravel "nome_do_projeto"
+```
+
 3 - Copiar os arquivos docker-compose.yml, Dockerfile e a pasta .docker para dentro do diretório do projeto
 
 4 - Rodar o comando para criar o container
@@ -106,4 +112,10 @@ docker compose logs -f php
 
 ```bash
 docker compose run --rm node npm install
+```
+
+- Listar portas em uso
+
+```bash
+sudo lsof -i -P -n | grep LISTEN
 ```

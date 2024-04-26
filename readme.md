@@ -114,8 +114,40 @@ docker compose logs -f php
 docker compose run --rm node npm install
 ```
 
+- Instalar pacote composer
+
+```bash
+docker compose run --rm composer require "nome_do_pacote"
+```
+
 - Listar portas em uso
 
 ```bash
 sudo lsof -i -P -n | grep LISTEN
 ```
+
+- Instalar dependências em projeto existente
+
+  ```bash
+  docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
+  ```
+
+- Instalar dependências em projeto existente com npm
+
+  ```bash
+  docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/node:latest \
+    npm install
+  ```
+
+  ````bash
+  sudo docker compose run -u root php bash
+  ````
